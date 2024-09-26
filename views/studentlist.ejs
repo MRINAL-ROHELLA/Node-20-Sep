@@ -10,17 +10,35 @@
                     <th>Father Name</th>
                     <th>Adhar Card</th>
                     <th>Mobile No</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <% students.forEach((student)=>{%>
-                <tr>
-                    <td><%= student.rollNo %></td>
-                    <td><%= student.firstName %></td>
-                    <td><%= student.lastName %></td>
-                    <td><%= student.fatherName %></td>
-                    <td><%= student.adharCardNo %></td>
-                    <td><%= student.mobileNo %></td>
-                </tr>
+            <tr>
+                <td>
+                    <%= student.rollNo %>
+                </td>
+                <td>
+                    <%= student.firstName %>
+                </td>
+                <td>
+                    <%= student.lastName %>
+                </td>
+                <td>
+                    <%= student.fatherName %>
+                </td>
+                <td>
+                    <%= student.adharCardNo %>
+                </td>
+                <td>
+                    <%= student.mobileNo %>
+                </td>
+                <td><a href="/edit/student/page/<%= student._id%>"
+                        class="btn btn-primary w-40">Edit</a>
+                    <a href="/delete/student/<%= student._id%>"
+                        class="btn btn-danger w-40">Delete</a>
+                </td>
+            </tr>
             <% }) %>
         </table>
     </div>
